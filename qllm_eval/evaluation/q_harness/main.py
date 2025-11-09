@@ -8,6 +8,7 @@ from qllm_eval.quantization.quant_wrapper import quantize_model
 from qllm_eval.utils import build_model_and_enc
 from qllm_eval.evaluation.q_harness.lm_eval_adaptor import LMEvalAdaptor
 from lm_eval import evaluator
+from lm_eval.utils import make_table
 
 
 parser = argparse.ArgumentParser()
@@ -65,9 +66,7 @@ def main():
             cache_requests=None,
             num_fewshot=0,
         )
-        # print(results)
-        # print(evaluator.make_table(results))
-        print(evaluator.make_table(results))
+        print(make_table(results))
 
 
 
